@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h3>Kontrol paneli</h3>
+<small>Hoşgeldin {{session["username"]}}</small>
+<hr>
+<a href="/addproduct" class="btn btn-danger">Ürün Ekle</a>
+
+
+{% if products %}
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Type</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Product Cost</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <th scope="row"><a href="/products/{{product.pid}}">{{product.pid}}</a></th>
+            <td>{{product.type}}</td>
+            <td>{{product.pname}}</td>
+            <td>{{product.pcost}}</td>
+            <td><a href="/edit/{{product.pid}}" class="btn btn-danger">Güncelle</a></td>
+            <td><a href="/delete/{{product.pid}}"class="btn btn-danger">Sil</a></td>
+
+
+
+
+        </tr>
+            
+        {% endfor %}
+     
+     
+     
+    </tbody>
+  </table>
+    
+{% else %}
+    <div class="alert alert-danger">Ürününüz bulunmamaktadır</div>
+{% endif %}
+    
+
+{% endblock %}

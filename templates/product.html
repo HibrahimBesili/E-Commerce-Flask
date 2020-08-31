@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+{% if product %}
+<h4>{{product.pname}}</h4>
+    
+{% else %}
+<div class="alert alert-warning">
+Ürün bulunamadı...
+</div>
+
+{% endif %}
+    
+
+{% endblock %} 

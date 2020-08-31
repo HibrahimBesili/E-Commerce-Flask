@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h3>Ürün Ekle</h3>
+
+{% from "includes/formhelpers.html" import render_field %}
+<form method="post">
+    
+    {{ render_field(form.ptype,class="form-control") }}
+    {{ render_field(form.pname,class="form-control") }}
+    {{ render_field(form.pcost,class="form-control") }}
+    
+    <button type="submit" class="btn btn-danger">Ürün Ekle</button>
+
+
+</form>
+
+{% endblock %}
