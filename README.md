@@ -1,1 +1,1 @@
-E-Commerce Web Site with Flask Framework(Pyhton)
+E-Commerce Web Site with Python(Flask)
